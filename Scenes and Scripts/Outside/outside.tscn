@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwxs0gv7j3ssl"]
+
+[ext_resource type="Script" path="res://Scenes and Scripts/Outside/outside.gd" id="1_34y6p"]
+[ext_resource type="PackedScene" uid="uid://n64oia4jcxq4" path="res://Scenes and Scripts/PlayerCharacter/player.tscn" id="2_3p5in"]
+
+[node name="Outside" type="Node2D"]
+script = ExtResource("1_34y6p")
+player_path = NodePath("Player")
+
+[node name="Player" parent="." instance=ExtResource("2_3p5in")]
+position = Vector2(512, 383)
+scale = Vector2(0.2, 0.2)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2, 2)
