@@ -3,6 +3,8 @@ extends Node
 var loaded_coords = []
 var data_in_chunk = []
 var maps_info = {}
+var maps_type = {}
+var grass_map_info = {}
 
 func _ready():
 	maps_info[Vector2(0,0)] = {}
@@ -26,10 +28,33 @@ func kill_boss(map_coords, boss_type, boss_state = false):
 	maps_info[map_coords][boss_type] = boss_state
 
 func retrieve_boss(map_coords):
-	var boss_type_and_state = maps_info[map_coords]
-	return boss_type_and_state
+	return maps_info[map_coords]
 
 func verify_map_exist(pos):
 	for key in maps_info:
 		if key == pos:
+			return true
+
+func add_map_type(map_coords, type_value):
+	if not maps_type.has(map_coords):
+		maps_type[map_coords] = type_value
+
+func retrieve_map_type(map_coords):
+	return maps_type[map_coords]
+
+func verify_map_type(pos):
+	for key in maps_type:
+		if key == pos:
+			return true
+
+func add_grass_map(map_coords, resources):
+	if not grass_map_info.has(map_coords):
+		grass_map_info[map_coords] = resources
+
+func retrieve_grass_map(map_coords):
+	return grass_map_info[map_coords]
+
+func verify_grass_map(map_coords):
+	for key in grass_map_info:
+		if key == map_coords:
 			return true

@@ -4,7 +4,7 @@ extends Node2D
 var player
 
 const chunk_node = preload("res://Scenes and Scripts/Outside/chunk_node.tscn")
-const house_node = preload("res://Scenes and Scripts/Outside/house.tscn")
+const house_node = preload("res://Scenes and Scripts/House/house.tscn")
 
 @export var render_distance : int = 2
 @export var chunk_size : int = 1024

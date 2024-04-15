@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhou54b6jjhpb"]
+
+[ext_resource type="Texture2D" uid="uid://dthjv45g6yle4" path="res://Assets/boss_tree.png" id="1_3f0er"]
+[ext_resource type="Script" path="res://Scenes and Scripts/Outside/Bosses/Boss.gd" id="1_iyyx5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5stt4"]
+size = Vector2(51, 23)
+
+[node name="TreeBoss" type="CharacterBody2D"]
+script = ExtResource("1_iyyx5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_3f0er")
+hframes = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.5, 22.5)
+shape = SubResource("RectangleShape2D_5stt4")

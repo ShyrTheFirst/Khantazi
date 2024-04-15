@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1eh31ijqern4"]
+
+[ext_resource type="Texture2D" uid="uid://diw2e14l5bg3x" path="res://Assets/forge.png" id="1_3tiqi"]
+
+[node name="Forge" type="StaticBody2D"]
+position = Vector2(457, 55)
+scale = Vector2(2, 2)
+
+[node name="Shape" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-16, 5, 17, 5, 20, 7, 19.5, 19, 32, 20, 32, 31, -32, 32, -32, 20, -16, 20)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_3tiqi")
+hframes = 3
+
+[node name="PlayerDetection" type="Area2D" parent="Sprite"]
+
+[node name="DetectionShape" type="CollisionPolygon2D" parent="Sprite/PlayerDetection"]
+position = Vector2(0, -12.4832)
+scale = Vector2(1, 1.58654)
+polygon = PackedVector2Array(-0.5, 11, -31.5, 20.5, -32, 42.5348, 32.5, 42.5, 32, 20.5)

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnq7gdbldx73h"]
+
+[ext_resource type="Texture2D" uid="uid://bsnl5lr0vrg0x" path="res://Assets/mineral.png" id="1_l7rym"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5c22i"]
+size = Vector2(28, 26)
+
+[node name="Mines" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_l7rym")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_5c22i")
