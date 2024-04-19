@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dies3xvbpcs2h"
+path="res://.godot/imported/smelting.wav-2c2cf41a4e81f01b2c90de0255304335.sample"
+
+[deps]
+
+source_file="res://Assets/SFX and Music/smelting.wav"
+dest_files=["res://.godot/imported/smelting.wav-2c2cf41a4e81f01b2c90de0255304335.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

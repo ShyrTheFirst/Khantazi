@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cv8msmdt50ubn"
+path="res://.godot/imported/fire_burst.wav-c6ea2785a6d581eb8e09156811081cfb.sample"
+
+[deps]
+
+source_file="res://Assets/SFX and Music/fire_burst.wav"
+dest_files=["res://.godot/imported/fire_burst.wav-c6ea2785a6d581eb8e09156811081cfb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -25,7 +25,7 @@ func add_boss(map_coords, boss_type, boss_pos):
 		maps_info[map_coords][boss_type] = [true, boss_pos] #define if boss is alive
 
 func kill_boss(map_coords, boss_type, boss_state = false):
-	maps_info[map_coords][boss_type] = boss_state
+	maps_info[map_coords][boss_type] = [boss_state, Vector2(0,0)]
 
 func retrieve_boss(map_coords):
 	return maps_info[map_coords]
@@ -58,3 +58,12 @@ func verify_grass_map(map_coords):
 	for key in grass_map_info:
 		if key == map_coords:
 			return true
+
+func remove_item_from_map(map_coords, item_coords, item_type):
+	if grass_map_info.has(map_coords):
+		var map_info = grass_map_info[map_coords]
+		var list_items = map_info[item_type]
+		for item in list_items:
+			if item[0] == item_coords:
+				item[1] = false
+				break

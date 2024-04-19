@@ -1,16 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://ban2fkfrfowg4"]
+[gd_scene load_steps=4 format=3 uid="uid://ban2fkfrfowg4"]
 
+[ext_resource type="Script" path="res://Scenes and Scripts/Outside/trees.gd" id="1_74341"]
 [ext_resource type="Texture2D" uid="uid://ck5o0tpmbnnei" path="res://Assets/tree.png" id="1_gosic"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bawoq"]
-radius = 9.0
-height = 32.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_qlblp"]
+radius = 13.5
 
 [node name="Trees" type="StaticBody2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_74341")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("1_gosic")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_bawoq")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-2.5, -2.5, -7, 3.5, -8, 5, -8, 8.5, -7, 10.5, -5, 12.5, -9, 15.5, 10, 16, 3.5, 10, -1.5, 8, -1.5, 4.5, 3, 1.5, 5, -1, 5, -4.5, 2.5, -2)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 7.5)
+shape = SubResource("CircleShape2D_qlblp")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

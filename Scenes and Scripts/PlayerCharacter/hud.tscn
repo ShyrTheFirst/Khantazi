@@ -1,0 +1,268 @@
+[gd_scene load_steps=12 format=3 uid="uid://cc0b0daw8kp0a"]
+
+[ext_resource type="Script" path="res://Scenes and Scripts/PlayerCharacter/hud.gd" id="1_d5n5l"]
+[ext_resource type="Texture2D" uid="uid://dfi55peaei8uq" path="res://Assets/Items/tronco.png" id="2_q0n3d"]
+[ext_resource type="Texture2D" uid="uid://c3b5l7t4xqyxk" path="res://Assets/Items/ore.png" id="3_hcdev"]
+[ext_resource type="Texture2D" uid="uid://c7o6mxhbmtn7k" path="res://Assets/hp_bar.png" id="3_qsrm3"]
+[ext_resource type="Texture2D" uid="uid://b6qhs0pxwkylv" path="res://Assets/Items/plank.png" id="4_bc8ax"]
+[ext_resource type="Texture2D" uid="uid://blttvqgguhj37" path="res://Assets/Items/metal.png" id="4_bmvft"]
+[ext_resource type="Texture2D" uid="uid://cg8trok10k75f" path="res://Assets/Items/ouro_vermelho.png" id="6_edsev"]
+[ext_resource type="Texture2D" uid="uid://cymw5xc3th5fn" path="res://Assets/Items/ouro_negro.png" id="7_w52it"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kx2wp"]
+bg_color = Color(0.498039, 0.454902, 0, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.682353, 0.619608, 0, 1)
+border_blend = true
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+shadow_offset = Vector2(-5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h4fq4"]
+bg_color = Color(0.752941, 0.690196, 0, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.992157, 0.901961, 0, 1)
+border_blend = true
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+shadow_offset = Vector2(-5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e7g1d"]
+bg_color = Color(0.331735, 0.301701, 1.44392e-07, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.52549, 0.478431, 0, 1)
+border_blend = true
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+shadow_offset = Vector2(-1, 4)
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_d5n5l")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 58.0
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -166.0
+offset_right = 684.0
+offset_bottom = 57.0
+grow_horizontal = 2
+theme_override_constants/separation = 25
+
+[node name="Wood" type="Panel" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="WoodSprite" type="Sprite2D" parent="Panel/HBoxContainer/Wood"]
+texture_filter = 1
+position = Vector2(27, 20)
+texture = ExtResource("2_q0n3d")
+
+[node name="WoodQuant" type="Label" parent="Panel/HBoxContainer/Wood"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 30.0
+offset_right = 59.0
+offset_bottom = 53.0
+text = "99999"
+
+[node name="Ore" type="Panel" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="OreSprite" type="Sprite2D" parent="Panel/HBoxContainer/Ore"]
+texture_filter = 1
+position = Vector2(30, 19)
+scale = Vector2(0.5, 0.5)
+skew = 0.357792
+texture = ExtResource("3_hcdev")
+
+[node name="OreQuant" type="Label" parent="Panel/HBoxContainer/Ore"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 30.0
+offset_right = 59.0
+offset_bottom = 53.0
+text = "99999"
+
+[node name="Plank" type="Panel" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="PlankSprite" type="Sprite2D" parent="Panel/HBoxContainer/Plank"]
+position = Vector2(28, 20)
+rotation = 0.359538
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_bc8ax")
+
+[node name="PlankQuant" type="Label" parent="Panel/HBoxContainer/Plank"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 30.0
+offset_right = 59.0
+offset_bottom = 53.0
+text = "99999"
+
+[node name="Bar" type="Panel" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="BarSprite" type="Sprite2D" parent="Panel/HBoxContainer/Bar"]
+texture_filter = 1
+position = Vector2(25, 23)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_bmvft")
+
+[node name="BarQuant" type="Label" parent="Panel/HBoxContainer/Bar"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 30.0
+offset_right = 59.0
+offset_bottom = 53.0
+text = "99999"
+
+[node name="Essence 1" type="Panel" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Essence1Sprite" type="Sprite2D" parent="Panel/HBoxContainer/Essence 1"]
+modulate = Color(0.113725, 0.482353, 0.0901961, 1)
+texture_filter = 1
+position = Vector2(27, 20)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("7_w52it")
+
+[node name="Essence1Quant" type="Label" parent="Panel/HBoxContainer/Essence 1"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 30.0
+offset_right = 59.0
+offset_bottom = 53.0
+text = "99999"
+
+[node name="Essence 2" type="Panel" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Essence2Sprite" type="Sprite2D" parent="Panel/HBoxContainer/Essence 2"]
+modulate = Color(0, 0.705882, 0.870588, 1)
+texture_filter = 1
+position = Vector2(25, 20)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_edsev")
+
+[node name="Essence2Quant" type="Label" parent="Panel/HBoxContainer/Essence 2"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 30.0
+offset_right = 59.0
+offset_bottom = 53.0
+text = "99999"
+
+[node name="Essence 3" type="Panel" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Essence3Sprite" type="Sprite2D" parent="Panel/HBoxContainer/Essence 3"]
+modulate = Color(0.360784, 0.403922, 0.184314, 1)
+texture_filter = 1
+position = Vector2(27, 20)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("7_w52it")
+
+[node name="Essence3Quant" type="Label" parent="Panel/HBoxContainer/Essence 3"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 30.0
+offset_right = 59.0
+offset_bottom = 53.0
+text = "99999"
+
+[node name="Essence 4" type="Panel" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Essence4Sprite" type="Sprite2D" parent="Panel/HBoxContainer/Essence 4"]
+texture_filter = 1
+position = Vector2(27, 20)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("7_w52it")
+
+[node name="Essence4Quant" type="Label" parent="Panel/HBoxContainer/Essence 4"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 30.0
+offset_right = 59.0
+offset_bottom = 53.0
+text = "99999"
+
+[node name="Essence 5" type="Panel" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Essence5Sprite" type="Sprite2D" parent="Panel/HBoxContainer/Essence 5"]
+modulate = Color(0.901961, 0.890196, 0, 1)
+texture_filter = 1
+position = Vector2(27, 19)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("7_w52it")
+
+[node name="Essence5Quant" type="Label" parent="Panel/HBoxContainer/Essence 5"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 30.0
+offset_right = 59.0
+offset_bottom = 53.0
+text = "99999"
+
+[node name="PlayerHP" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(0, 10)
+offset_left = 22.0
+offset_top = 22.0
+offset_right = 122.0
+offset_bottom = 33.0
+color = Color(0.67451, 0, 0, 1)
+
+[node name="HpBar" type="Sprite2D" parent="PlayerHP"]
+position = Vector2(51, 6)
+texture = ExtResource("3_qsrm3")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 217.0
+offset_top = 7.0
+offset_right = 282.0
+offset_bottom = 50.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_kx2wp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h4fq4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_e7g1d")
+text = "Menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

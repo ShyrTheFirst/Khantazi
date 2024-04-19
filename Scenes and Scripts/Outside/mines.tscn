@@ -1,16 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://dnq7gdbldx73h"]
+[gd_scene load_steps=4 format=3 uid="uid://dnq7gdbldx73h"]
 
 [ext_resource type="Texture2D" uid="uid://bsnl5lr0vrg0x" path="res://Assets/mineral.png" id="1_l7rym"]
+[ext_resource type="Script" path="res://Scenes and Scripts/Outside/mines.gd" id="1_lwra2"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5c22i"]
-size = Vector2(28, 26)
+[sub_resource type="CircleShape2D" id="CircleShape2D_37p5b"]
+radius = 21.0
 
 [node name="Mines" type="StaticBody2D"]
+script = ExtResource("1_lwra2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("1_l7rym")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
-shape = SubResource("RectangleShape2D_5c22i")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-12, 16, -14, 13, -12, 5, -2, -9, 3, -9, 9, -7, 10, -5, 10, 3, 13, 6, 13, 12, 12, 14, 14, 16)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_37p5b")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
