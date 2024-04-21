@@ -1,6 +1,8 @@
-[gd_resource type="Resource" script_class="Save_data" load_steps=2 format=3 uid="uid://d0f7boi0mlc7q"]
+[gd_resource type="Resource" script_class="Save_data" load_steps=2 format=3 uid="uid://bce0a2e0s3u7e"]
 
 [ext_resource type="Script" path="res://Scenes and Scripts/Singletons/SaveGame.gd" id="1_pghdp"]
 
 [resource]
+resource_name = "Save_data"
 script = ExtResource("1_pghdp")
+save_variables = {}

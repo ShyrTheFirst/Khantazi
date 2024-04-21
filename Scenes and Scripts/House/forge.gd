@@ -1,6 +1,11 @@
 extends StaticBody2D
 
-const AUDIO_TEMPLATE = preload("res://Scenes and Scripts/Singletons/audio_template.tscn")
+const audio_template = preload("res://Scenes and Scripts/Singletons/audio_template.tscn")
+const ANVIL_HIT = "res://Assets/SFX and Music/anvil_hit.wav"
+const DENIED = "res://Assets/SFX and Music/denied.mp3"
+const SMELTING = "res://Assets/SFX and Music/smelting.wav"
+
+
 
 @onready var panel = $Panel
 
@@ -22,8 +27,12 @@ var selected_essence5_quant : int = 0
 
 func _ready():
 	weapons.frame = 1
+	$Panel/DownSelection/ArrowDown.text = str(InputMap.action_get_events("ArrowDown")[0].as_text())
+	$Panel/UpSelection/ArrowUp.text = str(InputMap.action_get_events("ArrowUp")[0].as_text())
+	$Panel/ForgeWeapon/Craft.text = str(InputMap.action_get_events("Craft")[0].as_text())
+	$Panel/SmeltOres/Process.text = str(InputMap.action_get_events("Process")[0].as_text())
 
-func _process(delta):
+func _process(_delta):
 	match weapons.frame:
 		1:
 			selected_bar_quant = 5
@@ -168,22 +177,65 @@ func _on_up_selection_pressed(): #change weapon show
 	if weapons.frame < 17:
 		weapons.frame += 1
 
-func _on_forge_weapon_pressed(): #If all items OK, forge
-	if GameData.bar >= selected_bar_quant and GameData.Essence1 >= selected_essence1_quant and GameData.Essence2 >= selected_essence2_quant and GameData.Essence3 >= selected_essence3_quant and GameData.Essence4 >= selected_essence4_quant and GameData.Essence5 >= selected_essence5_quant:
-		print("Can Forge") #Play blacksmith sound and consume items
-		#get weapons.frame to select what item to forge
-		#GameData.created_weapons += 1
-		#match weapons.frame
-		#1: 
-		#frame1_created += 1
-		#2: 
-		#frame2_created += 1
-		#...... 
-	else:
-		print("Can't forge") #Play nope sound
+func _on_forge_weapon_pressed():
+	if GameData.weapon_hander_created >= 1 and GameData.bar >= selected_bar_quant and GameData.Essence1 >= selected_essence1_quant and GameData.Essence2 >= selected_essence2_quant and GameData.Essence3 >= selected_essence3_quant and GameData.Essence4 >= selected_essence4_quant and GameData.Essence5 >= selected_essence5_quant:
+		GameData.weapon_hander_created -= 1
+		GameData.bar -= selected_bar_quant
+		GameData.Essence1 -= selected_essence1_quant
+		GameData.Essence2 -= selected_essence2_quant
+		GameData.Essence3 -= selected_essence3_quant
+		GameData.Essence4 -= selected_essence4_quant
+		GameData.Essence5 -= selected_essence5_quant
 
-func _on_smelt_ores_pressed(): #If all items OK, smelt
-	if GameData.ore >= 8:
-		print("can smelt")#Play smelting sound
+		play_sound(ANVIL_HIT)
+
+		match weapons.frame:
+			1:
+				GameData.frame1_created += 1
+			2:
+				GameData.frame2_created += 1
+			3:
+				GameData.frame3_created += 1
+			4:
+				GameData.frame4_created += 1
+			5:
+				GameData.frame5_created += 1
+			6:
+				GameData.frame6_created += 1
+			7:
+				GameData.frame7_created += 1
+			8:
+				GameData.frame8_created += 1
+			9:
+				GameData.frame9_created += 1
+			10:
+				GameData.frame10_created += 1
+			11:
+				GameData.frame11_created += 1
+			12:
+				GameData.frame12_created += 1
+			13:
+				GameData.frame13_created += 1
+			14:
+				GameData.frame14_created += 1
+			15:
+				GameData.frame15_created += 1
+			16:
+				GameData.frame16_created += 1
+			17:
+				GameData.frame17_created += 1
 	else:
-		print("Can't smelt") #Play nope sound
+		play_sound(DENIED)
+
+func _on_smelt_ores_pressed():
+	if GameData.ore >= 8:
+		play_sound(SMELTING)
+		GameData.ore -= 8
+		GameData.bar += 1
+	else:
+		play_sound(DENIED)
+
+func play_sound(sfx_file):
+	var audio = audio_template.instantiate()
+	audio.sfx_to_play = sfx_file
+	add_child(audio)

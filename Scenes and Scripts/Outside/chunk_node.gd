@@ -2,6 +2,7 @@ extends Area2D
 
 var current_map_coords : Vector2
 @onready var tile_map = $TileMap
+var first_time : bool = false
 
 const trees = preload("res://Scenes and Scripts/Outside/trees.tscn")
 const mines = preload("res://Scenes and Scripts/Outside/mines.tscn")
@@ -16,16 +17,15 @@ var tree_list : Array = []
 var mine_list : Array = []
 var current_map_resources : Dictionary = {"Tree":tree_list, "Mine":mine_list}
 
-
 func save_position(coords):
 	current_map_coords = coords
-
-
 
 func _ready():
 	random_tile_selection() 
 	
 	if WorldSave.verify_map_exist(current_map_coords):
+		for nodes in get_tree().get_nodes_in_group("boss"):
+			nodes.queue_free()
 		var boss_info = WorldSave.retrieve_boss(current_map_coords)
 		for key in boss_info:
 			if boss_info[key][0]:
@@ -36,22 +36,22 @@ func _ready():
 						boss.receive_info(current_map_coords, tile_map.get_used_cells(0))
 						add_child(boss)
 					1:#stone
-						var boss = tree_boss.instantiate()
+						var boss = stone_boss.instantiate()
 						boss.position = boss_info[key][1] * 32
 						boss.receive_info(current_map_coords, tile_map.get_used_cells(0))
 						add_child(boss)
 					2:#mineral
-						var boss = tree_boss.instantiate()
+						var boss = ore_boss.instantiate()
 						boss.position = boss_info[key][1] * 32
 						boss.receive_info(current_map_coords, tile_map.get_used_cells(0))
 						add_child(boss)
-					3:#fire
-						var boss = tree_boss.instantiate()
+					3:#dark
+						var boss = dark_boss.instantiate()
 						boss.position = boss_info[key][1] * 32
 						boss.receive_info(current_map_coords, tile_map.get_used_cells(0))
 						add_child(boss)
 					4:#light
-						var boss = tree_boss.instantiate()
+						var boss = light_boss.instantiate()
 						boss.position = boss_info[key][1] * 32
 						boss.receive_info(current_map_coords, tile_map.get_used_cells(0))
 						add_child(boss)
@@ -63,7 +63,8 @@ func _ready():
 func generate_boss():
 	if WorldSave.retrieve_map_type(current_map_coords) == 2:
 		return
-
+	elif not first_time:
+		return
 	var tiles : Array = tile_map.get_used_cells(0)
 	var boss_tile = tiles.pick_random()
 	var random_type = randi_range(0,4)

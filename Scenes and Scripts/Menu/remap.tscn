@@ -1,0 +1,347 @@
+[gd_scene load_steps=2 format=3 uid="uid://brpjj3spks34u"]
+
+[ext_resource type="Script" path="res://Scenes and Scripts/Menu/remap.gd" id="1_o6pw8"]
+
+[node name="Remap" type="CanvasLayer"]
+script = ExtResource("1_o6pw8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="GridContainer" type="GridContainer" parent="."]
+offset_left = 28.0
+offset_top = 25.0
+offset_right = 778.0
+offset_bottom = 611.0
+theme_override_constants/h_separation = 350
+theme_override_constants/v_separation = 40
+columns = 2
+
+[node name="Menu_Name" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Menu/Quit: "
+
+[node name="Menu" type="Button" parent="GridContainer/Menu_Name"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = -10.0
+offset_right = 171.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 25
+toggle_mode = true
+text = "1"
+
+[node name="Attack_Name" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Attack: "
+
+[node name="Attack" type="Button" parent="GridContainer/Attack_Name"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = -10.0
+offset_right = 125.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 25
+toggle_mode = true
+text = "1"
+
+[node name="Up_Name" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Move Up:"
+
+[node name="Up" type="Button" parent="GridContainer/Up_Name"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = -10.0
+offset_right = 171.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 25
+toggle_mode = true
+text = "1"
+
+[node name="Down_Name" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Move Down:"
+
+[node name="Down" type="Button" parent="GridContainer/Down_Name"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = -10.0
+offset_right = 181.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 25
+toggle_mode = true
+text = "1"
+
+[node name="Left_Name" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Move Left:"
+
+[node name="Left" type="Button" parent="GridContainer/Left_Name"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = -10.0
+offset_right = 171.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 25
+toggle_mode = true
+text = "1"
+
+[node name="Right_Name" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Move Right:"
+
+[node name="Right" type="Button" parent="GridContainer/Right_Name"]
+layout_mode = 0
+offset_left = 145.0
+offset_top = -10.0
+offset_right = 176.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 25
+toggle_mode = true
+text = "1"
+
+[node name="Process_Name" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "First Action:"
+
+[node name="Process" type="Button" parent="GridContainer/Process_Name"]
+layout_mode = 0
+offset_left = 151.0
+offset_top = -10.0
+offset_right = 182.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 25
+toggle_mode = true
+text = "1"
+
+[node name="Craft_Name" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Second Action:"
+
+[node name="Craft" type="Button" parent="GridContainer/Craft_Name"]
+layout_mode = 0
+offset_left = 181.0
+offset_top = -10.0
+offset_right = 212.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 25
+toggle_mode = true
+text = "1"
+
+[node name="ArrowUp_Name" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Selection Up:"
+
+[node name="ArrowUp" type="Button" parent="GridContainer/ArrowUp_Name"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = -10.0
+offset_right = 195.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 25
+toggle_mode = true
+text = "1"
+
+[node name="ArrowDown_Name" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Selection Down:"
+
+[node name="ArrowDown" type="Button" parent="GridContainer/ArrowDown_Name"]
+layout_mode = 0
+offset_left = 195.0
+offset_top = -10.0
+offset_right = 226.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 25
+toggle_mode = true
+text = "1"
+
+[node name="1_Name" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "1:"
+
+[node name="1" type="Button" parent="GridContainer/1_Name"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = -10.0
+offset_right = 81.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 25
+toggle_mode = true
+text = "1"
+
+[node name="2_Name" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "2:"
+
+[node name="2" type="Button" parent="GridContainer/2_Name"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = -10.0
+offset_right = 81.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 25
+toggle_mode = true
+text = "1"
+
+[node name="3_Name" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "3:"
+
+[node name="3" type="Button" parent="GridContainer/3_Name"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = -10.0
+offset_right = 81.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 25
+toggle_mode = true
+text = "1"
+
+[node name="4_Name" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "4:"
+
+[node name="4" type="Button" parent="GridContainer/4_Name"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = -10.0
+offset_right = 81.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 25
+toggle_mode = true
+text = "1"
+
+[node name="5_Name" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "5:"
+
+[node name="5" type="Button" parent="GridContainer/5_Name"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = -10.0
+offset_right = 81.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 25
+toggle_mode = true
+text = "1"
+
+[node name="6_Name" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "6:"
+
+[node name="6" type="Button" parent="GridContainer/6_Name"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = -10.0
+offset_right = 81.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 25
+toggle_mode = true
+text = "1"
+
+[node name="7_Name" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "7:"
+
+[node name="7" type="Button" parent="GridContainer/7_Name"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = -10.0
+offset_right = 81.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 25
+toggle_mode = true
+text = "1"
+
+[node name="8_Name" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "8:"
+
+[node name="8" type="Button" parent="GridContainer/8_Name"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = -10.0
+offset_right = 81.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 25
+toggle_mode = true
+text = "1"
+
+[node name="9_Name" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "9:"
+
+[node name="9" type="Button" parent="GridContainer/9_Name"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = -10.0
+offset_right = 81.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 25
+toggle_mode = true
+text = "1"
+
+[node name="quit" type="Button" parent="."]
+offset_left = 730.0
+offset_top = 696.0
+offset_right = 999.0
+offset_bottom = 753.0
+theme_override_font_sizes/font_size = 35
+text = "BACK TO MENU"
+
+[node name="Audio" type="Button" parent="."]
+offset_left = 449.0
+offset_top = 696.0
+offset_right = 654.0
+offset_bottom = 753.0
+theme_override_font_sizes/font_size = 35
+toggle_mode = true
+text = "AUDIO : ON"
+
+[connection signal="toggled" from="GridContainer/Menu_Name/Menu" to="." method="_on_toggled"]
+[connection signal="toggled" from="GridContainer/Attack_Name/Attack" to="." method="_on_attack_toggled"]
+[connection signal="toggled" from="GridContainer/Up_Name/Up" to="." method="_on_up_toggled"]
+[connection signal="toggled" from="GridContainer/Down_Name/Down" to="." method="_on_down_toggled"]
+[connection signal="toggled" from="GridContainer/Left_Name/Left" to="." method="_on_left_toggled"]
+[connection signal="toggled" from="GridContainer/Right_Name/Right" to="." method="_on_right_toggled"]
+[connection signal="toggled" from="GridContainer/Process_Name/Process" to="." method="_on_process_toggled"]
+[connection signal="toggled" from="GridContainer/Craft_Name/Craft" to="." method="_on_craft_toggled"]
+[connection signal="toggled" from="GridContainer/ArrowUp_Name/ArrowUp" to="." method="_on_arrow_up_toggled"]
+[connection signal="toggled" from="GridContainer/ArrowDown_Name/ArrowDown" to="." method="_on_arrow_down_toggled"]
+[connection signal="toggled" from="GridContainer/1_Name/1" to="." method="_on_1_toggled"]
+[connection signal="toggled" from="GridContainer/2_Name/2" to="." method="_on_2_toggled"]
+[connection signal="toggled" from="GridContainer/3_Name/3" to="." method="_on_3_toggled"]
+[connection signal="toggled" from="GridContainer/4_Name/4" to="." method="_on_4_toggled"]
+[connection signal="toggled" from="GridContainer/5_Name/5" to="." method="_on_5_toggled"]
+[connection signal="toggled" from="GridContainer/6_Name/6" to="." method="_on_6_toggled"]
+[connection signal="toggled" from="GridContainer/7_Name/7" to="." method="_on_7_toggled"]
+[connection signal="toggled" from="GridContainer/8_Name/8" to="." method="_on_8_toggled"]
+[connection signal="toggled" from="GridContainer/9_Name/9" to="." method="_on_9_toggled"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
+[connection signal="toggled" from="Audio" to="." method="_on_audio_toggled"]

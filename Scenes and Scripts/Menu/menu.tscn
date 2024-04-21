@@ -1,60 +1,17 @@
-[gd_scene load_steps=37 format=3 uid="uid://cq5uhdmef07sh"]
+[gd_scene load_steps=21 format=3 uid="uid://cq5uhdmef07sh"]
 
 [ext_resource type="Script" path="res://Scenes and Scripts/Menu/menu.gd" id="1_3la32"]
+[ext_resource type="Texture2D" uid="uid://x13sdojcui23" path="res://Assets/door.png" id="2_8m77r"]
 [ext_resource type="AudioStream" uid="uid://ccpr27jn8u2hn" path="res://Assets/SFX and Music/Menu_music.wav" id="2_tltqq"]
 [ext_resource type="Texture2D" uid="uid://c1672h47df4i4" path="res://Assets/effect.png" id="2_vjod2"]
 [ext_resource type="AudioStream" uid="uid://dft0t7pk4g571" path="res://Assets/SFX and Music/door_sound.wav" id="3_14nts"]
-[ext_resource type="Texture2D" uid="uid://cusj1lxepv5oa" path="res://Assets/Buttons/start.png" id="3_81qh5"]
-[ext_resource type="AudioStream" uid="uid://cwp5iohabo2n2" path="res://Assets/SFX and Music/water_on_fire.ogg" id="3_snnxy"]
-[ext_resource type="Texture2D" uid="uid://bbx4yhql14vg8" path="res://Assets/Buttons/start_click.png" id="4_ad1ix"]
-[ext_resource type="Texture2D" uid="uid://2j5jskspgo4x" path="res://Assets/Buttons/start_clicked.png" id="5_i0naw"]
 [ext_resource type="AudioStream" uid="uid://cv8msmdt50ubn" path="res://Assets/SFX and Music/fire_burst.wav" id="5_tfq4i"]
-[ext_resource type="Texture2D" uid="uid://86825mn8xj5a" path="res://Assets/Buttons/loadgame.png" id="6_2h74y"]
-[ext_resource type="Texture2D" uid="uid://dq26h80e25rg2" path="res://Assets/Buttons/loadgame_click.png" id="7_uj1ka"]
-[ext_resource type="Texture2D" uid="uid://btwa7wak5ik34" path="res://Assets/Buttons/loadgame_clicked.png" id="8_5k6x3"]
-[ext_resource type="Texture2D" uid="uid://cj3af82t3yv86" path="res://Assets/Buttons/quitgame.png" id="9_kb6aw"]
-[ext_resource type="Texture2D" uid="uid://cuojxl2703bf" path="res://Assets/Buttons/quitgame_click.png" id="10_u4rul"]
+[ext_resource type="AudioStream" uid="uid://d0oa3fss63d3t" path="res://Assets/SFX and Music/water_on_fire.wav" id="12_cb4u4"]
 [ext_resource type="Texture2D" uid="uid://hor7lkqtgjyn" path="res://Assets/Icons/icon.png" id="15_siibl"]
 [ext_resource type="Texture2D" uid="uid://bcayvhu1mfb66" path="res://Assets/WJBanners/68-Forge.png" id="16_5vqbv"]
 [ext_resource type="Texture2D" uid="uid://cpyk8sqpvmybk" path="res://Assets/WJBanners/perma-death.png" id="17_c4k1w"]
 [ext_resource type="Texture2D" uid="uid://djbuj2i8y5xvw" path="res://Assets/WJBanners/sad-trombone.png" id="18_mmnas"]
 [ext_resource type="Texture2D" uid="uid://cjd5h6oavtw3w" path="res://Assets/GWJ-Full-Logo-tag-4k.png" id="19_i35oc"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ulh5y"]
-texture = ExtResource("3_81qh5")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r3nyf"]
-texture = ExtResource("4_ad1ix")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lllm5"]
-texture = ExtResource("5_i0naw")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j3fhd"]
-texture = ExtResource("5_i0naw")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6br30"]
-texture = ExtResource("6_2h74y")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0wlbc"]
-texture = ExtResource("7_uj1ka")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kr6u8"]
-texture = ExtResource("8_5k6x3")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rvjn5"]
-texture = ExtResource("8_5k6x3")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ixj7v"]
-texture = ExtResource("9_kb6aw")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_adqdu"]
-texture = ExtResource("10_u4rul")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fyp2a"]
-texture = ExtResource("10_u4rul")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l1im1"]
-texture = ExtResource("10_u4rul")
 
 [sub_resource type="Gradient" id="Gradient_hit41"]
 offsets = PackedFloat32Array(0, 0.47541, 0.97541)
@@ -86,13 +43,76 @@ color = Color(1, 0.603922, 0, 1)
 color_ramp = SubResource("GradientTexture1D_agw06")
 emission_curve = SubResource("CurveTexture_6s4ht")
 
+[sub_resource type="Animation" id="Animation_iaqx5"]
+resource_name = "starting"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.3, 0.3, 0.8, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_w6y5k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ufgt0"]
+_data = {
+"RESET": SubResource("Animation_w6y5k"),
+"starting": SubResource("Animation_iaqx5")
+}
+
 [node name="Menu" type="CanvasLayer"]
 script = ExtResource("1_3la32")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1041.0
-offset_bottom = 1041.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Door" type="Sprite2D" parent="."]
+position = Vector2(517, 383)
+scale = Vector2(1.28, 1.28)
+texture = ExtResource("2_8m77r")
+hframes = 4
+
+[node name="GameName" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -210.5
+offset_right = 210.5
+offset_bottom = 137.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.243137, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 7
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 100
+text = "Khantazi"
 
 [node name="BackgroundMenuMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_tltqq")
@@ -106,9 +126,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -184.0
-offset_top = -192.0
+offset_top = -141.0
 offset_right = 316.0
-offset_bottom = 358.0
+offset_bottom = 409.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.7, 0.7)
@@ -120,41 +140,53 @@ theme_override_constants/separation = 50
 custom_minimum_size = Vector2(500, 150)
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxTexture_ulh5y")
-theme_override_styles/hover = SubResource("StyleBoxTexture_r3nyf")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_lllm5")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_j3fhd")
-text = "
-"
+text = "START GAME"
+
+[node name="1" type="Label" parent="VBoxContainer/Start"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 40
+text = "1"
 
 [node name="Load" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(500, 150)
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxTexture_6br30")
-theme_override_styles/hover = SubResource("StyleBoxTexture_0wlbc")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_kr6u8")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_rvjn5")
+text = "LOAD GAME"
+
+[node name="2" type="Label" parent="VBoxContainer/Load"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 40
+text = "2"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(500, 150)
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxTexture_ixj7v")
-theme_override_styles/hover = SubResource("StyleBoxTexture_adqdu")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_fyp2a")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_l1im1")
+text = "QUIT GAME"
+
+[node name="3" type="Label" parent="VBoxContainer/Quit"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 40
+text = "3"
 
 [node name="Start_fire" type="GPUParticles2D" parent="."]
-position = Vector2(501, 281)
+z_index = 10
+position = Vector2(501, 345)
 emitting = false
-amount = 5000
+amount = 8000
 process_material = SubResource("ParticleProcessMaterial_lwiw5")
 texture = ExtResource("2_vjod2")
+lifetime = 3.0
 one_shot = true
 
 [node name="QuitSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_snnxy")
+stream = ExtResource("12_cb4u4")
 
 [node name="StartSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_tfq4i")
@@ -163,6 +195,9 @@ stream = ExtResource("5_tfq4i")
 stream = ExtResource("3_14nts")
 
 [node name="BackgroundAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ufgt0")
+}
 
 [node name="Button" type="Button" parent="."]
 offset_left = 73.0
@@ -184,8 +219,17 @@ offset_bottom = 66.68
 text = "Shyr's Games"
 metadata/_edit_use_anchors_ = true
 
+[node name="6" type="Label" parent="Button"]
+layout_mode = 0
+offset_left = -7.0
+offset_top = -5.0
+offset_right = 33.0
+offset_bottom = 18.0
+text = "6
+"
+
 [node name="68-forge" type="Sprite2D" parent="."]
-position = Vector2(508, 43)
+position = Vector2(499, 691)
 scale = Vector2(0.0842532, 0.0842533)
 texture = ExtResource("16_5vqbv")
 
@@ -207,16 +251,47 @@ scale = Vector2(0.131444, 0.131444)
 texture = ExtResource("19_i35oc")
 
 [node name="Label2" type="Label" parent="Gwj-full-logo-tag-4k"]
-offset_left = -623.837
-offset_top = -973.795
-offset_right = -443.837
-offset_bottom = -950.795
+offset_left = -387.996
+offset_top = -1011.83
+offset_right = 541.004
+offset_bottom = -738.834
+theme_override_font_sizes/font_size = 200
 text = "Made for:"
 metadata/_edit_use_anchors_ = true
+
+[node name="GWJLink" type="Button" parent="Gwj-full-logo-tag-4k"]
+offset_left = -746.0
+offset_top = -692.0
+offset_right = 730.0
+offset_bottom = 730.0
+flat = true
+
+[node name="5" type="Label" parent="Gwj-full-logo-tag-4k/GWJLink"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 150
+text = "5"
+
+[node name="Remapping" type="Button" parent="."]
+offset_left = 792.0
+offset_top = 520.0
+offset_right = 977.0
+offset_bottom = 575.0
+text = "CONFIG"
+
+[node name="4" type="Label" parent="Remapping"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 20
+text = "4"
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Load" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
-[connection signal="finished" from="Start_fire" to="." method="_on_start_fire_finished"]
 [connection signal="finished" from="QuitSound" to="." method="_on_quit_sound_finished"]
+[connection signal="finished" from="StartSound" to="." method="_on_start_sound_finished"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Gwj-full-logo-tag-4k/GWJLink" to="." method="_on_gwj_link_pressed"]
+[connection signal="pressed" from="Remapping" to="." method="_on_remapping_pressed"]

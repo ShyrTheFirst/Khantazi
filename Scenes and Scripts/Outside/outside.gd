@@ -54,6 +54,7 @@ func load_chunk():
 
 			if WorldSave.loaded_coords.find(chunk_coords) == -1:
 				var chunk = chunk_node.instantiate()
+				chunk.first_time = true
 				chunk.set_position(chunk_coords * chunk_size)
 				chunk.save_position(chunk_coords)
 				active_chunks.append(chunk)
@@ -66,6 +67,7 @@ func load_chunk():
 				match data:
 					1:
 						var chunk = chunk_node.instantiate()
+						chunk.first_time = false
 						chunk.set_position(chunk_coords * chunk_size)
 						chunk.save_position(chunk_coords)
 						active_chunks.append(chunk)

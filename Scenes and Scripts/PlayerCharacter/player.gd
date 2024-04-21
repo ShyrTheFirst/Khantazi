@@ -2,8 +2,9 @@ extends CharacterBody2D
 
 @onready var animation_player = $AnimationTree
 @onready var cancel_attack = $CancelAttack
+@onready var weapons = $Sprite2D/Weapons
 
-const AUDIO_TEMPLATE = preload("res://Scenes and Scripts/Singletons/audio_template.tscn")
+const audio_template = preload("res://Scenes and Scripts/Singletons/audio_template.tscn")
 
 var attacking : bool = false
 var last_side = 0
@@ -29,13 +30,22 @@ func _physics_process(_delta):
 	move_and_slide()
 
 func _process(_delta):
+	weapons.frame = GameData.selected_weapon
 	if GameData.player_HP <= 0:
 		self.visible = false
-		TransitionScreen.next_scene = "res://Scenes and Scripts/Menu/menu.tscn"
+		TransitionScreen.next_scene = "res://Scenes and Scripts/PlayerCharacter/end_game.tscn"
 		TransitionScreen.change_scene = true
 		TransitionScreen.fade_in()
 
 	isLeft = last_side < 0
+	if isLeft:
+		$PlayerAttackArea/AttackArea.position.x = 2
+		$CollisionShape2D.position.x = 16
+		$DamageDetection/CollisionShape2D.position.x = 16
+	else:
+		$PlayerAttackArea/AttackArea.position.x = 10
+		$CollisionShape2D.position.x = -3
+		$DamageDetection/CollisionShape2D.position.x = -3
 
 	animating()
 
@@ -84,3 +94,8 @@ func _on_animation_player_animation_finished(anim_name):
 
 func _on_cancel_attack_timeout():
 	attack_finish()
+
+func play_sound(sfx_file : String):
+	var audio = audio_template.instantiate()
+	audio.sfx_to_play = sfx_file
+	add_child(audio)
